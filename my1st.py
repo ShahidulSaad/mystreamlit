@@ -1,4 +1,5 @@
 # 1st
+'One'
 import streamlit as st
 
 st.write("Hello world") 
@@ -9,6 +10,7 @@ st.write("Hello world")
 # Here's our first attempt at using data to create a table:
 
 
+'Two'
 import streamlit as st
 import pandas as pd
 df = pd.DataFrame({
@@ -20,6 +22,7 @@ df
 
 
 # 3rd
+'Three'
 import streamlit as st
 import pandas as pd
 
@@ -36,6 +39,7 @@ option = st.selectbox(
 
 
 # 4th
+'Four'
 import streamlit as st
 import numpy as np
 
@@ -45,6 +49,7 @@ st.dataframe(dataframe)
 
 
 # 5th
+'Five'
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -58,6 +63,7 @@ st.dataframe(dataframe.style.highlight_max(axis=0))
 
 
 # 6th
+'Six'
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -68,7 +74,9 @@ dataframe = pd.DataFrame(
 st.table(dataframe)
 
 
+
 # 7th
+'Seven'
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -80,6 +88,7 @@ st.table(dataframe)
 
 
 # 8th
+'Eight'
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -92,6 +101,7 @@ st.line_chart(chart_data)
 
 
 # 9th
+'Nine'
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -104,4 +114,107 @@ st.map(map_data)
 
 
 # 10th
+'Ten'
+import streamlit as st
+x = st.slider('x')  # 👈 this is a widget
+st.write(x, 'squared is', x * x)
 
+
+# 11th
+'Eleven'
+import streamlit as st
+x = st.slider('x')  # 👈 this is a widget
+st.write(x, 'squared is', x * x)
+
+
+# 12th
+'twelve'
+import streamlit as st
+st.text_input("Your name", key="name")
+
+# You can access the value at any point with:
+st.session_state.name
+
+
+# 13th
+'Thirteen'
+import streamlit as st
+import numpy as np
+import pandas as pd
+
+if st.checkbox('Show dataframe'):
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+
+    chart_data
+
+
+# 14th
+'Fourteen'
+import streamlit as st
+import pandas as pd
+
+df = pd.DataFrame({
+    'first column': [1, 2, 3, 4],
+    'second column': [10, 20, 30, 40]
+    })
+
+option = st.selectbox(
+    'Which number do you like best?',
+     df['first column'])
+
+'You selected: ', option
+
+
+# 15th
+'Fifteen'
+import streamlit as st
+
+# Add a selectbox to the sidebar:
+add_selectbox = st.sidebar.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone')
+)
+
+# Add a slider to the sidebar:
+add_slider = st.sidebar.slider(
+    'Select a range of values',
+    0.0, 100.0, (25.0, 75.0)
+)
+
+
+# 16th
+'Sixteen'
+import streamlit as st
+
+left_column, right_column = st.columns(2)
+# You can use a column just like st.sidebar:
+left_column.button('Press me!')
+
+# Or even better, call Streamlit functions inside a "with" block:
+with right_column:
+    chosen = st.radio(
+        'Sorting hat',
+        ("Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"))
+    st.write(f"You are in {chosen} house!")
+
+
+# 17th
+'Seventeen'
+import streamlit as st
+import time
+
+'Starting a long computation...'
+
+# Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.1)
+
+'...and now we\'re done!'
