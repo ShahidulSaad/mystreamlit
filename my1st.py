@@ -121,10 +121,10 @@ st.write(x, 'squared is', x * x)
 
 
 # 11th
-'Eleven'
-import streamlit as st
-x = st.slider('x')  # 👈 this is a widget
-st.write(x, 'squared is', x * x)
+# 'Eleven'
+# import streamlit as st
+# x = st.slider('x')  # 👈 this is a widget
+# st.write(x, 'squared is', x * x)
 
 
 # 12th
